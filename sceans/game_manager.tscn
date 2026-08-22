@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bo2que24grjcv"]
+
+[sub_resource type="GDScript" id="GDScript_poog2"]
+resource_name = "res://game_manager,gd"
+script/source = "extends Node
+
+var points = 0
+
+@onready var points_label: Label = %PointsLabel
+
+func add_score_point():
+	points += 1  # Přičte k aktuálnímu skóre jeden bod
+	print(\"Moje skóre je nyní: \", points)  # Vypíše skóre dole do konzol
+	points_label.text =\"points: \" + str(points)
+"
+
+[node name="GameManager" type="Node" unique_id=399366445]
+script = SubResource("GDScript_poog2")

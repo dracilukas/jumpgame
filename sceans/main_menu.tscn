@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://kvpuk3mtyqye"]
+
+[ext_resource type="Texture2D" uid="uid://bvpiepdv0x3j2" path="res://cooltext514014685625492.png" id="1_ote24"]
+[ext_resource type="Texture2D" uid="uid://g8qmdxd0wyvs" path="res://sceans/Brown.png" id="2_53ywo"]
+
+[sub_resource type="GDScript" id="GDScript_ote24"]
+script/source = "extends Node
+
+func _on_level_1_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Level1.tscn\")
+
+func _on_leve_2_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Level2.tscn\")
+"
+
+[node name="MainMenu" type="Node" unique_id=1559647254]
+script = SubResource("GDScript_ote24")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=68483596]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.45700002
+anchor_right = 0.5
+anchor_bottom = 0.45700002
+offset_left = -246.0
+offset_top = -60.136017
+offset_right = 283.0
+offset_bottom = 66.86398
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ote24")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1913292825]
+z_index = -1
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_53ywo")
+stretch_mode = 1
+
+[node name="level 1" type="Button" parent="." unique_id=658127770]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = 71.0
+offset_right = -67.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "level 1"
+
+[node name="leve 2" type="Button" parent="." unique_id=1161115979]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = 73.0
+offset_right = 303.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "level 2"
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="leve 2" to="." method="_on_leve_2_pressed"]
