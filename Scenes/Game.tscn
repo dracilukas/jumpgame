@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c4fbgnp0lj7vk"]
+
+[ext_resource type="Script" uid="uid://iwgodbpk0fnv" path="res://Scenes/Game.gd" id="1_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://kvpuk3mtyqye" path="res://Scenes/Levels/main_menu.tscn" id="2_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://duqo41crdj444" path="res://Scenes/GUI/Hearts.tscn" id="2_kldst"]
+[ext_resource type="PackedScene" uid="uid://b0nu6ssykdxrb" path="res://Scenes/GUI/Score.tscn" id="3_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://cq7lu8loar1ev" path="res://Scenes/Levels/Pause.tscn" id="5_b2bpf"]
+
+[node name="Game" type="Node2D" unique_id=553798321]
+script = ExtResource("1_j5yw3")
+initial_level = ExtResource("2_b2bpf")
+
+[node name="Displej" type="CanvasLayer" parent="." unique_id=597257918]
+
+[node name="hearts" parent="Displej" unique_id=458415987 instance=ExtResource("2_kldst")]
+
+[node name="Lives" parent="Displej" unique_id=1466483615 instance=ExtResource("3_b2bpf")]
+
+[node name="Level" type="Node" parent="." unique_id=1674862997]
+
+[node name="Pause" parent="." unique_id=1447701903 instance=ExtResource("5_b2bpf")]
+visible = false

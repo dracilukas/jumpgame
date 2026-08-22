@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://duqo41crdj444"]
+
+[ext_resource type="Texture2D" uid="uid://cyqjkwhq1rnjo" path="res://Images/pixilart-drawing(4).png" id="1_17tlr"]
+[ext_resource type="Script" uid="uid://dfnob06vt2yr8" path="res://Scenes/GUI/hearts.gd" id="1_rp74f"]
+
+[node name="Hearts" type="Panel" unique_id=458415987]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -343.0
+offset_top = 9.0
+offset_right = -11.0
+offset_bottom = 111.0
+grow_horizontal = 0
+script = ExtResource("1_rp74f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1809851343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=553571099]
+layout_mode = 2
+texture = ExtResource("1_17tlr")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1813313987]
+layout_mode = 2
+texture = ExtResource("1_17tlr")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=1500178590]
+layout_mode = 2
+texture = ExtResource("1_17tlr")
