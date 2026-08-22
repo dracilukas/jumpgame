@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2p1jpl7ggvq3"]
+
+[ext_resource type="Texture2D" uid="uid://c2spf117t8i67" path="res://Images/End (Idle).png" id="1_pht1y"]
+
+[sub_resource type="GDScript" id="GDScript_5py54"]
+script/source = "extends Area2D
+
+@export var target_level : PackedScene
+
+func _on_body_entered(body: Node2D) -> void:
+	if(body.name == \"CharacterBody2D\"):
+		GameManager.change_level(target_level)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poog2"]
+size = Vector2(51, 62.5)
+
+[node name="finish" type="Area2D" unique_id=1763150779]
+script = SubResource("GDScript_5py54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1211364991]
+position = Vector2(91.49999, 143.5)
+scale = Vector2(1.6093749, 1.421875)
+texture = ExtResource("1_pht1y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1868633221]
+position = Vector2(91.5, 158.25)
+shape = SubResource("RectangleShape2D_poog2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
