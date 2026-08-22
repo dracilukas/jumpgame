@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="pozeser pokus2"
-run/main_scene="uid://kvpuk3mtyqye"
+run/main_scene="uid://c4fbgnp0lj7vk"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
 
 [autoload]
 
-GameManager="*uid://bo2que24grjcv"
+GameManager="*uid://diaq0xlsj1wed"
 
 [display]
 
