@@ -62,7 +62,7 @@ func _ready():
 	# 1. Časovač vložíme do scény a nastavíme HNED na začátku hry (jen jednou)
 	add_child(timer)
 	timer.one_shot = true
-	timer.wait_time = 10.0
+	timer.wait_time = 20.0
 	
 	# 2. Signál připojíme také pouze JEDNOU při startu
 	timer.timeout.connect(_potion_ran_out)
@@ -79,4 +79,9 @@ func got_jump_potion():
 	
 func _potion_ran_out():
 	potion_velocity = 1
+	get_tree().change_scene_to_file("res://Scenes/Levels/final_score.tscn")
 	print("potion ran out - skok je zpět v normálu")
+	
+	
+
+	
