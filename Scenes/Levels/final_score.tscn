@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cuod8v7vuvbv4"]
+
+[ext_resource type="Texture2D" uid="uid://j0ig12uaawsc" path="res://Images/game over.png" id="2_hdaca"]
+[ext_resource type="Texture2D" uid="uid://g8qmdxd0wyvs" path="res://Images/Brown.png" id="2_uvtr2"]
+
+[sub_resource type="GDScript" id="GDScript_hq1vv"]
+resource_name = "final_score"
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void: 
+	$final_score.text = \"final score: %d\" % GameManager.score
+
+
+
+func _on_ok_button_pressed() -> void:
+	GameManager.goto_main_menu()
+"
+
+[node name="final_score" type="Node" unique_id=1559647254]
+script = SubResource("GDScript_hq1vv")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1913292825]
+z_index = -1
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uvtr2")
+stretch_mode = 1
+
+[node name="game over" type="TextureRect" parent="." unique_id=1839568585]
+offset_left = 278.0
+offset_top = 66.0
+offset_right = 860.0
+offset_bottom = 213.0
+texture = ExtResource("2_hdaca")
+
+[node name="final_score" type="Label" parent="." unique_id=1494016385]
+offset_left = 417.0
+offset_top = 248.0
+offset_right = 797.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 39
+text = "final score:"
+vertical_alignment = 1
+
+[node name="Ok_Button" type="Button" parent="." unique_id=1354311181]
+offset_left = 416.0
+offset_top = 426.0
+offset_right = 669.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 48
+text = "OK"
+
+[connection signal="pressed" from="Ok_Button" to="." method="_on_ok_button_pressed"]

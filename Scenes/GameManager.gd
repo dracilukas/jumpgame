@@ -38,7 +38,7 @@ func reset_score():
 ################################################
 # LEVELS
 ################################################
-
+signal signal_game_over()
 signal signal_level(level: PackedScene)
 signal signal_main_menu()
 
@@ -47,3 +47,7 @@ func change_level(level: PackedScene):
 	
 func goto_main_menu():
 	signal_main_menu.emit()
+	
+
+func goto_game_over():
+	signal_game_over.emit()
