@@ -79,8 +79,8 @@ func got_jump_potion():
 	
 func _potion_ran_out():
 	potion_velocity = 1
-	get_tree().change_scene_to_file("res://Scenes/Levels/final_score.tscn")
 	print("potion ran out - skok je zpět v normálu")
+
 	
 	
 
