@@ -6,9 +6,15 @@
 script/source = "extends Area2D
 
 func _on_body_entered(_body: Node2D) -> void:
-	queue_free()
-	
+	set_deferred(\"monitoring\", false)
+	visible = false
 	GameManager.got_jump_potion()
+	
+	await get_tree().create_timer(20).timeout
+	
+	visible = true
+	set_deferred(\"monitoring\", true)
+	GameManager._potion_ran_out()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbtum"]
@@ -88,9 +94,9 @@ position = Vector2(218.25, 151.75)
 scale = Vector2(2.21875, 3.34375)
 sprite_frames = SubResource("SpriteFrames_hq1vv")
 autoplay = "default"
-frame_progress = 0.58923626
+frame_progress = 0.64397734
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620703913]
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1620703913]
 position = Vector2(218, 152)
 shape = SubResource("CapsuleShape2D_poog2")
 

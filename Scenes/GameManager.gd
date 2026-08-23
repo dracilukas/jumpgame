@@ -74,13 +74,12 @@ func got_jump_potion():
 	
 	# 3. Zde už časovač pouze spustíme. 
 	# Výhoda: Pokud hráč sebere další lektvar před vypršením, odpočet se restartuje na 2 sekundy.
-	timer.start() 
+	#timer.start() 
 	
 	
 func _potion_ran_out():
 	potion_velocity = 1
 	print("potion ran out - skok je zpět v normálu")
-
 	
 	
 
