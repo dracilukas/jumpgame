@@ -56,8 +56,16 @@ func goto_game_over():
 ############################################
 
 var potion_velocity: float = 1
-
-
+var timer: Timer = Timer.new()
 
 func got_jump_potion():
 	potion_velocity = 1.35
+	timer.start()
+	timer.one_shot = true
+	timer.wait_time = 2
+	timer.timeout.connect(_potion_ran_out)
+	
+	
+func _potion_ran_out():
+	potion_velocity = 1
+	print("potion ran out")
