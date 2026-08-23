@@ -58,14 +58,25 @@ func goto_game_over():
 var potion_velocity: float = 1
 var timer: Timer = Timer.new()
 
-func got_jump_potion():
-	potion_velocity = 1.35
-	timer.start()
+func _ready():
+	# 1. Časovač vložíme do scény a nastavíme HNED na začátku hry (jen jednou)
+	add_child(timer)
 	timer.one_shot = true
-	timer.wait_time = 2
+	timer.wait_time = 10.0
+	
+	# 2. Signál připojíme také pouze JEDNOU při startu
 	timer.timeout.connect(_potion_ran_out)
+
+
+func got_jump_potion():
+	print("Lektvar sebrán! Vyšší skok aktivován.")
+	potion_velocity = 1.35
+	
+	# 3. Zde už časovač pouze spustíme. 
+	# Výhoda: Pokud hráč sebere další lektvar před vypršením, odpočet se restartuje na 2 sekundy.
+	timer.start() 
 	
 	
 func _potion_ran_out():
 	potion_velocity = 1
-	print("potion ran out")
+	print("potion ran out - skok je zpět v normálu")
