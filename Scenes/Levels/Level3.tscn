@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://6jileehomhbu" path="res://Scenes/Actors/main_character.gd" id="4_bptnd"]
 [ext_resource type="PackedScene" uid="uid://c53htr663syym" path="res://Scenes/Actors/colectible.tscn" id="5_gp5y5"]
 [ext_resource type="PackedScene" uid="uid://c2p1jpl7ggvq3" path="res://Scenes/Actors/finish.tscn" id="6_kah4x"]
-[ext_resource type="PackedScene" uid="uid://cuod8v7vuvbv4" path="res://Scenes/Levels/final_score.tscn" id="7_t0ble"]
+[ext_resource type="PackedScene" uid="uid://bm006tmfdqllk" path="res://Scenes/Levels/levels_finished.tscn" id="7_nvbyj"]
 [ext_resource type="PackedScene" uid="uid://hmlu10e1xwb3" path="res://Scenes/Actors/enemy.tscn" id="8_80vsr"]
 [ext_resource type="Texture2D" uid="uid://crgjx6ihjabbu" path="res://Images/pixilart-drawing(3).png" id="9_kyqi5"]
 [ext_resource type="Texture2D" uid="uid://xpxikh7s1gcf" path="res://Images/pixilart-drawing(5).png" id="10_ewulq"]
@@ -271,11 +271,11 @@ script = ExtResource("4_bptnd")
 
 [node name="finish" parent="sceans objects" unique_id=1763150779 instance=ExtResource("6_kah4x")]
 position = Vector2(-4264, -145)
-target_level = ExtResource("7_t0ble")
+target_level = ExtResource("7_nvbyj")
 
 [node name="finish2" parent="sceans objects" unique_id=980501504 instance=ExtResource("6_kah4x")]
 position = Vector2(202, 432)
-target_level = ExtResource("7_t0ble")
+target_level = ExtResource("7_nvbyj")
 
 [node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_80vsr")]
 position = Vector2(-2178, 1209)
