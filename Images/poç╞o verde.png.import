@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cby56stdkcmx7"
-path="res://.godot/imported/you finished.png-3ce00cd946d86b4c60c84d42b71aa076.ctex"
+uid="uid://cp4akdqfo5cn6"
+path="res://.godot/imported/poç╞o verde.png-6f4b8ab2bfa9c0852e3c4eec983246bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Levels/you finished.png"
-dest_files=["res://.godot/imported/you finished.png-3ce00cd946d86b4c60c84d42b71aa076.ctex"]
+source_file="res://Images/poç╞o verde.png"
+dest_files=["res://.godot/imported/poç╞o verde.png-6f4b8ab2bfa9c0852e3c4eec983246bf.ctex"]
 
 [params]
 

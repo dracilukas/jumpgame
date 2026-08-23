@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c53htr663syym" path="res://Scenes/Actors/colectible.tscn" id="5_pj4lr"]
 [ext_resource type="PackedScene" uid="uid://c2p1jpl7ggvq3" path="res://Scenes/Actors/finish.tscn" id="6_00xh1"]
 [ext_resource type="Texture2D" uid="uid://crgjx6ihjabbu" path="res://Images/pixilart-drawing(3).png" id="7_8tfmj"]
-[ext_resource type="PackedScene" uid="uid://bkliuo5vq6cql" path="res://Scenes/Levels/Level3.tscn" id="7_46pvi"]
 [ext_resource type="PackedScene" uid="uid://hmlu10e1xwb3" path="res://Scenes/Actors/enemy.tscn" id="8_3453u"]
+[ext_resource type="PackedScene" uid="uid://bhq4f8d7q8kyi" path="res://Scenes/Levels/level3.tscn" id="8_ipaot"]
 [ext_resource type="Texture2D" uid="uid://ct75kt4fsqu87" path="res://Images/pixilart-drawing(2).png" id="8_jw1dd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
@@ -224,6 +224,12 @@ sources/0 = SubResource("TileSetAtlasSource_7mycd")
 
 [node name="sceans objects" type="Node" parent="." unique_id=222285311]
 
+[node name="PixilartDrawing(2)" type="Sprite2D" parent="sceans objects" unique_id=444901223]
+z_index = -1
+position = Vector2(-1154, -276)
+scale = Vector2(101.240005, 21.535)
+texture = ExtResource("8_jw1dd")
+
 [node name="TextureRect" type="TextureRect" parent="sceans objects" unique_id=2096400786]
 z_index = -2
 texture_filter = 1
@@ -300,7 +306,11 @@ position = Vector2(-3665, 86)
 
 [node name="finish" parent="sceans objects" unique_id=1763150779 instance=ExtResource("6_00xh1")]
 position = Vector2(-3975, -95)
-target_level = ExtResource("7_46pvi")
+target_level = ExtResource("8_ipaot")
+
+[node name="finish2" parent="sceans objects" unique_id=97635757 instance=ExtResource("6_00xh1")]
+position = Vector2(380, 372)
+target_level = ExtResource("8_ipaot")
 
 [node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_3453u")]
 position = Vector2(-2178, 1209)
@@ -311,12 +321,6 @@ position = Vector2(-2178, 1209)
 position = Vector2(-509, -8)
 scale = Vector2(2.9899995, 2.76)
 texture = ExtResource("7_8tfmj")
-
-[node name="PixilartDrawing(2)" type="Sprite2D" parent="pozadi lol" unique_id=444901223]
-z_index = -1
-position = Vector2(-1687.0001, -298)
-scale = Vector2(101.240005, 21.535)
-texture = ExtResource("8_jw1dd")
 
 [node name="Enemy" parent="pozadi lol" unique_id=1945988526 instance=ExtResource("8_3453u")]
 position = Vector2(124, 403)

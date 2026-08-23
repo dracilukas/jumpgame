@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://biobxhk852dhv"]
+
+[ext_resource type="Texture2D" uid="uid://cp4akdqfo5cn6" path="res://Images/poç╞o verde.png" id="1_aw784"]
+
+[sub_resource type="GDScript" id="GDScript_b12pc"]
+script/source = "extends Area2D
+
+func _on_body_entered(_body: Node2D) -> void:
+	queue_free()
+	
+	GameManager.got_jump_potion()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbtum"]
+atlas = ExtResource("1_aw784")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vpy3"]
+atlas = ExtResource("1_aw784")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s50wo"]
+atlas = ExtResource("1_aw784")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkx4h"]
+atlas = ExtResource("1_aw784")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g3dr"]
+atlas = ExtResource("1_aw784")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a5cp"]
+atlas = ExtResource("1_aw784")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08oce"]
+atlas = ExtResource("1_aw784")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3xpp"]
+atlas = ExtResource("1_aw784")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hq1vv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbtum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vpy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s50wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkx4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g3dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a5cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08oce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3xpp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_poog2"]
+radius = 16.0
+height = 48.0
+
+[node name="jump_potion" type="Area2D" unique_id=527877615]
+script = SubResource("GDScript_b12pc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311251618]
+texture_filter = 1
+position = Vector2(218.25, 151.75)
+scale = Vector2(2.21875, 3.34375)
+sprite_frames = SubResource("SpriteFrames_hq1vv")
+autoplay = "default"
+frame_progress = 0.4618997
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620703913]
+position = Vector2(218, 152)
+shape = SubResource("CapsuleShape2D_poog2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

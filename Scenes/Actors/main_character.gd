@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "Idle"
 	# 2. Skok (při stisknutí Mezerníku / up a zároveň stojíte na zemi)
 	if Input.is_action_just_pressed("up"):
-		velocity.y = jump_velocity 
+		velocity.y = jump_velocity * GameManager.potion_velocity
 	
 	# 3. Pohyb vlevo a vpravo (A/D nebo šipky)
 	var direction := Input.get_axis("left", "right")

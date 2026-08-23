@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm006tmfdqllk"]
 
 [ext_resource type="Texture2D" uid="uid://g8qmdxd0wyvs" path="res://Images/Brown.png" id="1_cbf5d"]
-[ext_resource type="Texture2D" uid="uid://cby56stdkcmx7" path="res://Scenes/Levels/you finished.png" id="2_cbf5d"]
+[ext_resource type="Texture2D" uid="uid://cby56stdkcmx7" path="res://Images/you finished.png" id="2_cbf5d"]
 
 [sub_resource type="GDScript" id="GDScript_hq1vv"]
 resource_name = "final_score"

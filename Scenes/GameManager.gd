@@ -48,6 +48,16 @@ func change_level(level: PackedScene):
 func goto_main_menu():
 	signal_main_menu.emit()
 	
-
 func goto_game_over():
 	signal_game_over.emit()
+	
+############################################
+# potions
+############################################
+
+var potion_velocity: float = 1
+
+
+
+func got_jump_potion():
+	potion_velocity = 1.35
