@@ -313,7 +313,7 @@ position = Vector2(380, 372)
 target_level = ExtResource("8_ipaot")
 
 [node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_3453u")]
-position = Vector2(-2178, 1209)
+position = Vector2(-2154, -133)
 
 [node name="pozadi lol" type="Node" parent="." unique_id=1599332482]
 
@@ -323,4 +323,4 @@ scale = Vector2(2.9899995, 2.76)
 texture = ExtResource("7_8tfmj")
 
 [node name="Enemy" parent="pozadi lol" unique_id=1945988526 instance=ExtResource("8_3453u")]
-position = Vector2(124, 403)
+position = Vector2(-2972, -42)
