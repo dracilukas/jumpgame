@@ -309,7 +309,7 @@ position = Vector2(-3975, -95)
 target_level = ExtResource("8_ipaot")
 
 [node name="finish2" parent="sceans objects" unique_id=97635757 instance=ExtResource("6_00xh1")]
-position = Vector2(380, 372)
+position = Vector2(-4168, 1193)
 target_level = ExtResource("8_ipaot")
 
 [node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_3453u")]

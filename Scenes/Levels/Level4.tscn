@@ -280,15 +280,21 @@ layer_0/tile_data = PackedInt32Array(851968, 393216, 8, 851969, 458752, 8, 85197
 position = Vector2(150, 561)
 script = ExtResource("5_l5kak")
 
-[node name="finish" parent="sceans objects" unique_id=1763150779 instance=ExtResource("6_1u1uf")]
-position = Vector2(-4264, -145)
-target_level = ExtResource("7_8qdnk")
-
-[node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_sytno")]
-position = Vector2(-1341, 10)
-
 [node name="jump_potion" parent="sceans objects" unique_id=527877615 instance=ExtResource("9_7f72b")]
 position = Vector2(46, 438)
+
+[node name="finish" parent="sceans objects" unique_id=1763150779 instance=ExtResource("6_1u1uf")]
+position = Vector2(-2988, 53)
+target_level = ExtResource("7_8qdnk")
+
+[node name="enemies" type="Node" parent="sceans objects" unique_id=1788082827]
+
+[node name="Enemy" parent="sceans objects/enemies" unique_id=2104256317 instance=ExtResource("8_sytno")]
+position = Vector2(-1341, 10)
+
+[node name="Enemy" parent="sceans objects/enemies/Enemy" unique_id=1945988526 instance=ExtResource("8_sytno")]
+process_mode = 3
+position = Vector2(-1475, 93)
 
 [node name="pozadi lol" type="Node" parent="." unique_id=1599332482]
 
@@ -297,5 +303,4 @@ position = Vector2(-511.00003, -289)
 scale = Vector2(2.9899995, 2.76)
 texture = ExtResource("9_as08y")
 
-[node name="Enemy" parent="pozadi lol" unique_id=1945988526 instance=ExtResource("8_sytno")]
-position = Vector2(-2816, 103)
+[node name="boss" type="Node" parent="." unique_id=912137352]

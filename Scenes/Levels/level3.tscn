@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d3sa08orby4h4" path="res://Scenes/Actors/main_character.tscn" id="4_c346c"]
 [ext_resource type="Script" uid="uid://6jileehomhbu" path="res://Scenes/Actors/main_character.gd" id="5_46s4o"]
 [ext_resource type="PackedScene" uid="uid://c2p1jpl7ggvq3" path="res://Scenes/Actors/finish.tscn" id="6_ndqic"]
-[ext_resource type="PackedScene" uid="uid://bm006tmfdqllk" path="res://Scenes/Levels/levels_finished.tscn" id="7_vqlhw"]
 [ext_resource type="PackedScene" uid="uid://hmlu10e1xwb3" path="res://Scenes/Actors/enemy.tscn" id="8_la4le"]
 [ext_resource type="PackedScene" uid="uid://bkliuo5vq6cql" path="res://Scenes/Levels/Level4.tscn" id="8_n80jh"]
 [ext_resource type="PackedScene" uid="uid://c53htr663syym" path="res://Scenes/Actors/colectible.tscn" id="9_opn2v"]
@@ -272,10 +271,6 @@ script = ExtResource("5_46s4o")
 
 [node name="finish" parent="sceans objects" unique_id=1763150779 instance=ExtResource("6_ndqic")]
 position = Vector2(-4264, -145)
-target_level = ExtResource("7_vqlhw")
-
-[node name="finish2" parent="sceans objects" unique_id=980501504 instance=ExtResource("6_ndqic")]
-position = Vector2(202, 432)
 target_level = ExtResource("8_n80jh")
 
 [node name="Enemy" parent="sceans objects" unique_id=2104256317 instance=ExtResource("8_la4le")]
@@ -375,3 +370,9 @@ position = Vector2(-4008, -6)
 
 [node name="colectible11" parent="pozadi lol/colectibles" unique_id=652747477 instance=ExtResource("9_opn2v")]
 position = Vector2(-4035, -47)
+
+[node name="Enemy" parent="." unique_id=2027259874 instance=ExtResource("8_la4le")]
+position = Vector2(-17, 11)
+
+[node name="Enemy2" parent="." unique_id=1139146900 instance=ExtResource("8_la4le")]
+position = Vector2(-820, -233)
