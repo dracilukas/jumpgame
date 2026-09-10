@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var jump_velocity: float = -400.0
+@onready var joystick: Control = $CanvasLayer/joystick
 
 func jump():
 	velocity.y = jump_velocity

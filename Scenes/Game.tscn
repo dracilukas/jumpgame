@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://duqo41crdj444" path="res://Scenes/GUI/Hearts.tscn" id="2_kldst"]
 [ext_resource type="PackedScene" uid="uid://b0nu6ssykdxrb" path="res://Scenes/GUI/Score.tscn" id="3_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://cq7lu8loar1ev" path="res://Scenes/Levels/Pause.tscn" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://bn8u7fpa3gjan" path="res://joystick.tscn" id="6_7lihs"]
 
 [node name="Game" type="Node2D" unique_id=553798321]
 script = ExtResource("1_j5yw3")
@@ -20,3 +21,11 @@ initial_level = ExtResource("2_b2bpf")
 
 [node name="Pause" parent="." unique_id=1447701903 instance=ExtResource("5_b2bpf")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=942426042]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=937055102 instance=ExtResource("6_7lihs")]
+offset_left = 2.0
+offset_top = 565.0
+offset_right = -1070.0
+offset_bottom = -3.0

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://bn8u7fpa3gjan"]
+
+[sub_resource type="GDScript" id="GDScript_poog2"]
+resource_name = "Joystick"
+script/source = "extends Control
+
+var joystickDirection := Vector2.ZERO
+var lastDirectionActions: Array = []
+
+@onready var border: PanelContainer = $Border
+@onready var point: PanelContainer = $Point
+
+
+func _input(event: InputEvent) -> void:
+	var centerPosition = global_position + size / 2 - point.size / 2
+	
+	if event is InputEventScreenDrag:
+		var onLeftScreen = event.position.x < get_viewport_rect().size.x / 2
+		
+		if not onLeftScreen:
+			return
+			
+		var newPosition = event.position
+		
+		var radius = border.size.x / 2
+		var inBorder = centerPosition.distance_to(newPosition) < radius
+		var direction = centerPosition.direction_to(newPosition)
+		
+		if inBorder:
+			point.global_position = newPosition
+		else:
+			point.global_position = centerPosition + direction * radius
+			
+		joystickDirection = direction
+
+	var isTouchReleased = event is InputEventScreenTouch and event.is_released()
+	if isTouchReleased:
+		point.global_position = centerPosition
+		joystickDirection = Vector2.ZERO
+
+func get_joystick_direction():
+	return joystickDirection
+
+func _physics_process(_delta: float) -> void:
+	if not joystickDirection:
+		for action in lastDirectionActions:
+			Input.action_release(action)
+		lastDirectionActions.clear()
+		return
+		
+	# Pohyb DOPRAVA
+	if joystickDirection.x > 0.5:
+		Input.action_press(\"ui_right\")
+		if not lastDirectionActions.has(\"ui_right\"):
+			lastDirectionActions.append(\"ui_right\")
+	else:
+		_release_action(\"ui_right\")
+
+	# Pohyb DOLEVA
+	if joystickDirection.x < -0.5:
+		Input.action_press(\"ui_left\")
+		if not lastDirectionActions.has(\"ui_left\"):
+			lastDirectionActions.append(\"ui_left\")
+	else:
+		_release_action(\"ui_left\")
+
+	# Pohyb DOLŮ
+	if joystickDirection.y > 0.5:
+		Input.action_press(\"ui_down\")
+		if not lastDirectionActions.has(\"ui_down\"):
+			lastDirectionActions.append(\"ui_down\")
+	else:
+		_release_action(\"ui_down\")
+
+	# Pohyb NAHORU
+	if joystickDirection.y < -0.5:
+		Input.action_press(\"ui_up\")
+		if not lastDirectionActions.has(\"ui_up\"):
+			lastDirectionActions.append(\"ui_up\")
+	else:
+		_release_action(\"ui_up\")
+
+func _release_action(action: StringName) -> void:
+	if action in lastDirectionActions:
+		Input.action_release(action)
+		lastDirectionActions.erase(action)
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjspa"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w25ul"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="Joystick" type="Control" unique_id=937055102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1072.0
+offset_bottom = -568.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_poog2")
+
+[node name="Border" type="PanelContainer" parent="." unique_id=1018483016]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjspa")
+
+[node name="Point" type="PanelContainer" parent="." unique_id=1535199740]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w25ul")
