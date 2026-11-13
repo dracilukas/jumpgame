@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c0ol2835a2nhp"]
-
-[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick_cf/virtual_joystick_cf.tscn" id="1_37qbi"]
-
-[node name="VirtualJoystickCF" unique_id=912784726 instance=ExtResource("1_37qbi")]

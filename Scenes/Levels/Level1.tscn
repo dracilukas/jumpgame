@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dcjy2m2u6rsbn" path="res://Scenes/Levels/Level2.tscn" id="7_1bjei"]
 [ext_resource type="PackedScene" uid="uid://c53htr663syym" path="res://Scenes/Actors/colectible.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://hmlu10e1xwb3" path="res://Scenes/Actors/enemy.tscn" id="8_aiv1b"]
+[ext_resource type="PackedScene" uid="uid://qfc5l825am48" path="res://Scenes/boss.tscn" id="11_57lp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("2_1bvp3")
@@ -204,10 +205,24 @@ texture = ExtResource("2_1bvp3")
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_poog2"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 9
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_7mycd")
 
 [node name="Level1" type="Node" unique_id=692843171]
+
+[node name="pozadi lol" type="Node" parent="." unique_id=1599332482]
+
+[node name="Slunce" type="Sprite2D" parent="pozadi lol" unique_id=979006658]
+position = Vector2(-509, -8)
+scale = Vector2(2.9899995, 2.76)
+texture = ExtResource("6_7mycd")
+
+[node name="Obloha" type="Sprite2D" parent="pozadi lol" unique_id=444901223]
+z_index = -1
+position = Vector2(-1192, -314)
+scale = Vector2(101.240005, 21.535)
+texture = ExtResource("5_lquwl")
 
 [node name="sceans objects" type="Node" parent="." unique_id=222285311]
 
@@ -302,17 +317,8 @@ target_level = ExtResource("7_1bjei")
 position = Vector2(-2151, -135)
 
 [node name="Enemy2" parent="sceans objects/enemies" unique_id=1960314599 instance=ExtResource("8_aiv1b")]
-position = Vector2(-1232, 155)
+position = Vector2(-2365, -664)
 
-[node name="pozadi lol" type="Node" parent="." unique_id=1599332482]
-
-[node name="Slunce" type="Sprite2D" parent="pozadi lol" unique_id=979006658]
-position = Vector2(-509, -8)
-scale = Vector2(2.9899995, 2.76)
-texture = ExtResource("6_7mycd")
-
-[node name="Obloha" type="Sprite2D" parent="pozadi lol" unique_id=444901223]
-z_index = -1
-position = Vector2(-768.00006, -327)
-scale = Vector2(101.240005, 21.535)
-texture = ExtResource("5_lquwl")
+[node name="Boss" parent="." unique_id=107220737 instance=ExtResource("11_57lp3")]
+position = Vector2(-1038, -145)
+scale = Vector2(3, 3)
